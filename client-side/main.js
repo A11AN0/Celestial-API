@@ -42,7 +42,7 @@ input.addEventListener('mouseout', ()=>{
 const obtainCelestialBody = async () => {
     const searchTerm = input.value
     try{
-        const res = await fetch(`http://localhost:9000/api/celestialBodyList/${searchTerm}`)
+        const res = await fetch(`https://celestial-api-ao.herokuapp.com/api/celestialBodyList/${searchTerm}`)
         const data = await res.json()
         navBar.innerHTML = renderHTML(data)
         title.innerText = capitalizeFirstLetter(searchTerm)
@@ -58,7 +58,7 @@ const obtainCelestialBody = async () => {
 const celestialBodyPic = async () => {
     const searchTerm = input.value
     try{
-        const res = await fetch(`http://localhost:9000/images/${searchTerm.toLowerCase()}.jpeg`)
+        const res = await fetch(`https://celestial-api-ao.herokuapp.com/images/${searchTerm.toLowerCase()}.jpeg`)
         body.style.backgroundImage=`url(${res.url})`
         console.log(res.url)
     }catch(err){
