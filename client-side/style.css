@@ -25,6 +25,12 @@ nav {
     position: absolute;
     top: 10%;
     list-style-type: none;
+    
+}
+
+nav:hover {
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
 }
 
 input {
@@ -58,4 +64,5 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    
 }
