@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express()
+const PORT = 9000
 
 app.use(cors())
 
@@ -40,8 +41,8 @@ let celestialBodyList = {
 
 }
 
-app.listen(9000, ()=>{
-    console.log('listening on 9000 :)')
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`Server is running on port ${PORT} :)`)
 })
 
 app.use(express.static("public"))
